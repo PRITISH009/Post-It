@@ -1,33 +1,9 @@
 from django.shortcuts import render
+from .models import Notes
 
 context = {
     'title' : 'My Wall',
-    'posts' : [
-        {
-            'task' : 'Task 1',
-            'description' : 'Description of Task 1'
-        },
-        {
-            'task' : 'Task 2',
-            'description' : 'Description of Task 2'
-        },
-        {
-            'task' : 'Task 3',
-            'description' : 'Description of Task 3'
-        },
-        {
-            'task' : 'Task 4',
-            'description' : 'Description of Task 4'
-        },
-        {
-            'task' : 'Task 5',
-            'description' : 'Description of Task 5'
-        },
-        {
-            'task' : 'Task 6',
-            'description' : 'Description of Task 6' 
-        }
-    ]
+    'posts' : Notes.objects.all()
 }
 
 

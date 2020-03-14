@@ -1,7 +1,12 @@
 {% load static %}
 <li>
     <a href="#">
-        <h2>{{ note.task }}</h2>
-        <p>{{ note.description }}</p>
+        <h5>{{ note.task }}</h5>
+        <div>
+            <small>{{ note.description }}</small>
+        </div>
+        <div>
+            <small class="text-muted">{{ note.date_posted | date:"F d, Y" }}</small>
+        </div>
     </a>
 </li>

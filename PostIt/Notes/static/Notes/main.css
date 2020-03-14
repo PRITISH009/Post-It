@@ -67,15 +67,15 @@ body {
     color:#000;
     background:rgb(252, 252, 114);
     display:block;
-    height:10em;
-    width:10em;
+    height:15em;
+    width:15em;
     padding:1em;
   }
   .wrapper > ul li{
     margin:1em;
     float:left;
   }
-
+  
   
   .account-img {
     height: 125px;
