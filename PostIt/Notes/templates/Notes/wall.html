@@ -1,4 +1,10 @@
 {% extends "Notes/base.html" %}
 {% block content %}
-    <h1>This is My Wall </h1>
+    <div class='wrapper'>
+        <ul class='task-class'>
+            {% for note in posts %}
+                {%include "Notes/notes.html" with note=note %}
+            {% endfor %}
+        </ul>
+    </div>  
 {% endblock content%}
