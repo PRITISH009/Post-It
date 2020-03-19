@@ -11,6 +11,7 @@ class NoteListView(LoginRequiredMixin,ListView):
     context_object_name = 'posts'
     template_name = 'Notes/wall.html'
     ordering = ['-date_posted']
+    paginate_by = 4
 
     def get_queryset(self):
         queryset = Notes.objects.filter(user = self.request.user.id)
@@ -30,7 +31,7 @@ class NoteDetailView(LoginRequiredMixin, UserPassesTestMixin ,DetailView):
 class NoteCreateView(LoginRequiredMixin,CreateView):
     model = Notes
     fields = ['task', 'description']
-
+    success_url = '/'
     def form_valid(self, form):
         form.instance.user = self.request.user
         return super().form_valid(form)
