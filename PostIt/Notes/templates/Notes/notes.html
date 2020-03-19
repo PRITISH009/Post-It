@@ -1,6 +1,6 @@
 {% load static %}
 <li>
-    <a href="#">
+    <a href="{% url 'notes-detail' note.id %}">
         <h5>{{ note.task }}</h5>
         <div>
             <small>{{ note.description }}</small>
