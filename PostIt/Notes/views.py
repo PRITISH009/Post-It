@@ -10,11 +10,10 @@ class NoteListView(LoginRequiredMixin,ListView):
     model = Notes
     context_object_name = 'posts'
     template_name = 'Notes/wall.html'
-    ordering = ['-date_posted']
     paginate_by = 4
 
     def get_queryset(self):
-        queryset = Notes.objects.filter(user = self.request.user.id)
+        queryset = Notes.objects.filter(user = self.request.user.id).order_by('-date_posted')
         return queryset
 
 
